@@ -13,5 +13,31 @@
         Nombre: <span th:text="${persona.nombres}"></span><br>
         Apellidos <span th:text="${persona.apellidos}"></span><br>
         Email <span th:text="${persona.email}"></span><br>
+
+        <br>
+        <div th:if="${personas != null and !personas.empty}">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre:</th>
+                        <th>Apellido:</th>
+                        <th>Email:</th>
+                        <th>Teléfono:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="persona : ${personas}">
+                        <td>Nombre: <span th:text="${persona.nombres}"></span></td>
+                        <td>Apellidos: <span th:text="${persona.apellidos}"></span></td>
+                        <td>Email: <span th:text="${persona.email}"></span></td>
+                        <td>Teléfono: <span th:text="${persona.telefono}"></span></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div th:if="${personas == null or personas.empty}">
+            <p>LISTA VACIA</p>
+        </div>
     </body>
 </html>
