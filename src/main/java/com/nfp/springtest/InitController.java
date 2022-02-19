@@ -17,9 +17,15 @@ public class InitController {
     public String helloWorld(Model model) {
         String msg = "Hola mundo desde variables";
         log.info("Ejecutando controlador SPRING MVC");
-
+        var persona = new Persona();
+        persona.setNombres("Nestor Fabricio");
+        persona.setApellidos("Parra Gonzalez");
+        persona.setEmail("fabri@gmail.com");
+        persona.setTelefono("315421236");
+        
         model.addAttribute("msg", msg);
         model.addAttribute("saludo", saludo);
+        model.addAttribute("persona", persona);
         return "index";
     }
 
