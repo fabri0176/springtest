@@ -1,22 +1,26 @@
-package com.nfp.springtest.web;
+package com.nfp.springtest.controller;
 
-import java.util.ArrayList;
+
+import com.nfp.springtest.dao.IPersonDao;
 import org.springframework.web.bind.annotation.GetMapping;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
 @Controller
 @Slf4j
 public class InitController {
-
-    @Value("${index.saludo}")
-    private String saludo;
-
+    
+    @Autowired(required = true)  
+    private IPersonDao iPersonDao;
+    
     @GetMapping("/")
     public String helloWorld(Model model) {
         log.info("Ejecutando controlador SPRING MVC");
+        var persons = iPersonDao.findAll();
+        log.info("Ejecutando controlador SPRING MVC 2");
+        model.addAttribute("persons", persons);
         return "index";
     }
 

@@ -7,15 +7,8 @@
     </head>
     <body>
         <h1>Inicio</h1>
-        <p th:text="${msg}"></p>
-        <p th:text="${saludo}"></p>
         <br>
-        Nombre: <span th:text="${persona.nombres}"></span><br>
-        Apellidos <span th:text="${persona.apellidos}"></span><br>
-        Email <span th:text="${persona.email}"></span><br>
-
-        <br>
-        <div th:if="${personas != null and !personas.empty}">
+        <div th:if="${persons != null and !persons.empty}">
             <table>
                 <thead>
                     <tr>
@@ -26,17 +19,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="persona : ${personas}">
-                        <td>Nombre: <span th:text="${persona.nombres}"></span></td>
-                        <td>Apellidos: <span th:text="${persona.apellidos}"></span></td>
-                        <td>Email: <span th:text="${persona.email}"></span></td>
-                        <td>Teléfono: <span th:text="${persona.telefono}"></span></td>
+                    <tr th:each="person : ${persons}">
+                        <td><span th:text="${person.first_name}"></span></td>
+                        <td><span th:text="${person.last_name}"></span></td>
+                        <td><span th:text="${person.email}"></span></td>
+                        <td><span th:text="${person.phone}"></span></td>
                     </tr>
 
                 </tbody>
             </table>
         </div>
-        <div th:if="${personas == null or personas.empty}">
+        <div th:if="${persons == null or persons.empty}">
             <p>LISTA VACIA</p>
         </div>
     </body>

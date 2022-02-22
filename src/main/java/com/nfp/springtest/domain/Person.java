@@ -1,11 +1,7 @@
 package com.nfp.springtest.domain;
 
 import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import lombok.Data;
 
 /**
@@ -22,8 +18,8 @@ public class Person implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nombres;
-    private String apellidos;
+    private String first_name;
+    private String last_name;
+    private String phone;
     private String email;
-    private String telefono;
 }
