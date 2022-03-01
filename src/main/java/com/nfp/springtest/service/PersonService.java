@@ -13,11 +13,11 @@ import java.util.List;
  */
 public interface PersonService {
 
-    public List<Person> listarPersonas();
+    public List<Person> personsList();
 
     public void save(Person person);
 
-    public void eliminar(Person person);
+    public void delete(Person person);
 
     public Person findPerson(Person persona);
 
