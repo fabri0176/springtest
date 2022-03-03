@@ -45,4 +45,10 @@ public class InitController {
         return "personEdit";
     }
 
+    @GetMapping("/delete")
+    public String delete(Person person) {
+        personService.delete(person);
+        return "redirect:/";
+    }
+
 }

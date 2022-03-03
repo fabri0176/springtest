@@ -28,7 +28,7 @@
                         <td><span th:text="${person.email}"></span></td>
                         <td><span th:text="${person.phone}"></span></td>
                         <td><a th:href="@{/edit/}+${person.id}" >Editar</a></td>
-                        <td><a th:href="@{/delete/}+${person.id}" >Eliminar</a></td>
+                        <td><a th:href="@{/delete(id=${person.id})}" >Eliminar</a></td>
                     </tr>
 
                 </tbody>
