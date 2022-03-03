@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Editar | Persona</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Datos de la Persona</h1>
+        <a th:href="@{/}">Volver</a>
+        <br>
+        <form th:action="@{/save}" method="post" th:object="${person}">
+            <label for="first_name">Nombre:</label>
+            <input type="text" name="first_name" th:field="*{first_name}">
+            <br>
+
+            <label for="last_name">Apellidos:</label>
+            <input type="text" name="last_name" th:field="*{last_name}">
+            <br>
+            <label for="phone">Teléfono</label>
+            <input type="tel" name="phone" th:field="*{phone}">
+            <br>
+            <label for="email">Email</label>
+            <input type="email" name="email" th:field="*{email}">
+            <br>
+            <input type="submit" name="guardar" value="Guardar" >
+        </form>
+    </body>
+</html>
