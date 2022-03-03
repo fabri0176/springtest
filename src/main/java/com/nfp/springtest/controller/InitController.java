@@ -35,8 +35,14 @@ public class InitController {
     @PostMapping("/save")
     public String save(Person person) {
         personService.save(person);
-
         return "redirect:/";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String editar(Person person, Model model) {
+        person = personService.findPerson(person);
+        model.addAttribute("person", person);
+        return "personEdit";
     }
 
 }

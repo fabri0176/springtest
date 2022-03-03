@@ -14,6 +14,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <a th:href="@{/}">Volver</a>
         <br>
         <form th:action="@{/save}" method="post" th:object="${person}">
+            <input type="hidden" name="id" th:field="*{id}">
             <label for="first_name">Nombre:</label>
             <input type="text" name="first_name" th:field="*{first_name}">
             <br>
