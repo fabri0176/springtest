@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>Inicio</h1>
+        <header th:replace="layouts/template :: header"></header>
         <a th:href="@{/add}">Crear Persona</a>
         <br>
         <div th:if="${persons != null and !persons.empty}">
@@ -37,5 +37,7 @@
         <div th:if="${persons == null or persons.empty}">
             <p>LISTA VACIA</p>
         </div>
+        
+        <footer th:replace="layouts/template :: footer"></footer>
     </body>
 </html>
