@@ -2,6 +2,7 @@ package com.nfp.springtest.domain;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import lombok.Data;
 
@@ -27,6 +28,7 @@ public class Person implements Serializable {
     private String last_name;
     
     @NotEmpty
+    @Email
     private String email;
     
     private String phone;
