@@ -17,16 +17,19 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <input type="hidden" name="id" th:field="*{id}">
             <label for="first_name">Nombre:</label>
             <input type="text" name="first_name" th:field="*{first_name}">
+            <span th:if="${#fields.hasErrors('first_name')}" th:errors='*{first_name}'>Error first_name</span>
             <br>
 
             <label for="last_name">Apellidos:</label>
             <input type="text" name="last_name" th:field="*{last_name}">
+            <span th:if="${#fields.hasErrors('last_name')}" th:errors='*{last_name}'>Error last_name</span>
             <br>
             <label for="phone">Teléfono</label>
             <input type="tel" name="phone" th:field="*{phone}">
             <br>
             <label for="email">Email</label>
             <input type="email" name="email" th:field="*{email}">
+            <span th:if="${#fields.hasErrors('email')}" th:errors='*{email}'>Error email</span>
             <br>
             <input type="submit" name="guardar" value="Guardar" >
         </form>

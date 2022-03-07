@@ -3,11 +3,13 @@ package com.nfp.springtest.controller;
 import com.nfp.springtest.dao.IPersonDao;
 import com.nfp.springtest.domain.Person;
 import com.nfp.springtest.service.PersonService;
+import javax.validation.Valid;
 import org.springframework.web.bind.annotation.GetMapping;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -33,7 +35,12 @@ public class InitController {
     }
 
     @PostMapping("/save")
-    public String save(Person person) {
+    public String save(@Valid Person person, Errors errors) {
+        
+        if(errors.hasErrors()){
+            return "personEdit";
+        }
+        
         personService.save(person);
         return "redirect:/";
     }
