@@ -16,19 +16,19 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <br>
         <form th:action="@{/save}" method="post" th:object="${person}">
             <input type="hidden" name="id" th:field="*{id}">
-            <label for="first_name">Nombre:</label>
+            <label for="first_name">[[#{person.first_name}]]</label>
             <input type="text" name="first_name" th:field="*{first_name}">
             <span th:if="${#fields.hasErrors('first_name')}" th:errors='*{first_name}'>Error first_name</span>
             <br>
 
-            <label for="last_name">Apellidos:</label>
+            <label for="last_name">[[#{person.last_name}]]</label>
             <input type="text" name="last_name" th:field="*{last_name}">
             <span th:if="${#fields.hasErrors('last_name')}" th:errors='*{last_name}'>Error last_name</span>
             <br>
-            <label for="phone">Teléfono</label>
+            <label for="phone">[[#{person.phone}]]</label>
             <input type="tel" name="phone" th:field="*{phone}">
             <br>
-            <label for="email">Email</label>
+            <label for="email">[[#{person.email}]]</label>
             <input type="email" name="email" th:field="*{email}">
             <span th:if="${#fields.hasErrors('email')}" th:errors='*{email}'>Error email</span>
             <br>

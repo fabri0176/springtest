@@ -7,10 +7,10 @@
     </head>
     <body>
         <header th:fragment="header">
-            <h1>Persons Control</h1>
+            <h1 th:text="#{template.title}"></h1>
         </header>
         <footer th:fragment="footer">
-            <p>Derechos Reservados </p>
+            <p>[[ #{template.footer} ]] <a href="google.com.co">Clic aquí</a></p>
         </footer>
     </body>
 </html>

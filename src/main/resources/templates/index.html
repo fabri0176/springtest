@@ -7,18 +7,18 @@
     </head>
     <body>
         <header th:replace="layouts/template :: header"></header>
-        <a th:href="@{/add}">Crear Persona</a>
+        <a th:href="@{/add}">[[#{person.create}]]</a>
         <br>
         <div th:if="${persons != null and !persons.empty}">
-            <table>
+            <table border="1">
                 <thead>
                     <tr>
-                        <th>Nombre:</th>
-                        <th>Apellido:</th>
-                        <th>Email:</th>
-                        <th>Teléfono:</th>
-                        <th>Editar</th>
-                        <th>Eliminar</th>
+                        <th>[[#{person.first_name}]]</th>
+                        <th>[[#{person.last_name}]]</th>
+                        <th>[[#{person.email}]]</th>
+                        <th>[[#{person.phone}]]</th>
+                        <th>[[#{action.edit}]]</th>
+                        <th>[[#{action.delete}]]</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,7 +35,7 @@
             </table>
         </div>
         <div th:if="${persons == null or persons.empty}">
-            <p>LISTA VACIA</p>
+            <p>[[#{person.emptylist}]]</p>
         </div>
         
         <footer th:replace="layouts/template :: footer"></footer>
